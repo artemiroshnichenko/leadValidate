@@ -53,7 +53,7 @@ def mail_check(data):
     return data
 
 def phone_cc(data):
-    pref = load_d("prefix_ph.csv")
+    pref = load_d("data/prefix_ph.csv")
     #gray = pd.DataFrame(columns=['tel'])
     for i in range(len(data)):
         flag = False
@@ -70,9 +70,10 @@ def phone_cc(data):
     return data   
 
 def main(): 
-    #print(load_d('data.csv'))
-    mail_check(load_d("data.csv"))
-    phone_cc(load_d("data.csv"))
+    data = load_d('data/data.csv')
+    data = mail_check(data)
+    data = phone_cc(data)
+    print(data)
 
     
 
